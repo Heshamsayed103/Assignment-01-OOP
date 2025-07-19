@@ -1,326 +1,165 @@
-﻿using System.Reflection;
-using System.Security.Claims;
-using static System.Runtime.InteropServices.JavaScript.JSType;
+﻿//1. Class 
+//2. Struct 
+//3. Interface 
+//4. Enum
 
-using System.ComponentModel;
-using System.Drawing;
 
-namespace Assignment_01_OOP
+//internal Struct Point {
+
+//    public int X = default ; // 4
+//    public int Y = default ; // 4
+
+// Constructor : Special Methods
+//    1. Named Like Struct
+//    1. Has No Return Type
+
+// CLR :Will Generate Parameterless Contractor
+// This Constructor will Initialized The Attributes With The Default Values
+
+
+// Constructor
+//public Point()
+//{
+//}
+
+
+//public Point(int x, int y)
+//{
+//    X = x;
+//    Y = y;
+
+//}
+
+
+//}
+internal class Program
 {
-    //==============Part01========================//
-    #region Q"1 Struct
-
-
-    //struct Point
-    //{
-
-    //    public double X { get; set; }
-    //    public double Y { get; set; }
-
-
-    //    public Point(double x, double
-    //        y)
-    //    {
-    //        X = x;
-    //        Y = y;
-    //    }
-
-
-    //    public double DistanceTo(Point other)
-    //    {
-    //        double dx = other.X - this.X;
-    //        double dy = other.Y - this.Y;
-    //        return Math.Sqrt(dx * dx + dy * dy);
-    //    }
-
-    //    public override string ToString()
-    //    {
-    //        return $"({X}, {Y})";
-    //    }
-    //}
-
-    #endregion
-
-    #region Q"2 Struct
-    //struct Person
-    //{
-    //    public string Name { get; set; }
-    //    public int Age { get; set; }
-
-    //    public Person(string name, int age)
-    //    {
-    //        Name = name;
-    //        Age = age;
-    //    }
-    //} 
-    #endregion
-
-
-    //Part 02//
-
-    #region Q1" Enum & Class
-
-    //enum SecurityLevel
-    //{
-    //    Guest,
-    //    Developer,
-    //    Secretary,
-    //    DBA
-    //}
-
-    //class Employee
-    //{
-
-    //    private int id;
-    //    private string name;
-    //    private SecurityLevel securityLevel;
-    //    private double salary;
-    //    private DateTime hireDate;
-    //    private char gender;
-
-
-    //    public Employee(int id, string name, SecurityLevel securityLevel, double salary, DateTime hireDate, char gender)
-    //    {
-    //        this.Id = id;
-    //        this.Name = name;
-    //        this.SecurityLevel = securityLevel;
-    //        this.Salary = salary;
-    //        this.HireDate = hireDate;
-    //        this.Gender = gender;
-    //    }
-
-
-    //    public int Id
-    //    {
-    //        get { return id; }
-    //        set { id = value; }
-    //    }
-
-    //    public string Name
-    //    {
-    //        get { return name; }
-    //        set { name = value; }
-    //    }
-
-    //    public SecurityLevel SecurityLevel
-    //    {
-    //        get { return securityLevel; }
-    //        set { securityLevel = value; }
-    //    }
-
-    //    public double Salary
-    //    {
-    //        get { return salary; }
-    //        set { salary = value > 0 ? value : 0; }
-    //    }
-
-    //    public DateTime HireDate
-    //    {
-    //        get { return hireDate; }
-    //        set { hireDate = value; }
-    //    }
-
-    //    public char Gender
-    //    {
-    //        get { return gender; }
-    //        set
-    //        {
-    //            if (value == 'M' || value == 'F')
-    //                gender = value;
-    //            else
-    //                throw new ArgumentException("Gender must be 'M' or 'F'.");
-    //        }
-    //    }
-
-
-    //    public override string ToString()
-    //    {
-    //        return $"ID: {Id}, Name: {Name}, Security: {SecurityLevel}, Salary: {String.Format("{0:C}", Salary)}, Hire Date: {HireDate.ToShortDateString()}, Gender: {Gender}";
-    //    }
-    //}
-
-    //0. Develop a Class to represent the Hiring Date Data:
-    //● Consisting of fields to hold the day, month and Years.
-
-    //class HiringDate
-    //{
-    //    public int Day;
-    //    public int Month;
-    //    public int Year;
-
-    //    public HiringDate(int day, int month, int year)
-    //    {
-    //        Day = day;
-    //        Month = month;
-    //        Year = year;
-    //    }
-
-    //    public override string ToString()
-    //    {
-    //        return $"{Day}/{Month}/{Year}";
-    //    }
-    //}
-
-    #endregion
-
-
-    #region 0.Develop 0.Create  an array of Employees with size three a DBA, Guest and the third one is security officer who have full permissions. (Employee [] EmpArr;)
-    //Notes:
-    //● Implement All the Necessary Member Functions on the Class(Getters, Setters)
-    //● Define all the Necessary Constructors for the Class
-    //● Allow NO RUNTIME errors if the user inputs any data
-    //● Write down all the necessary Properties(Instead of setters and getters)
-
-    //enum Role
-    //{
-    //    Guest,
-    //    DBA,
-    //    SecurityOfficer
-    //}
-
-    //[Flags]
-    //enum Permissions
-    //{
-    //    None = 0,
-    //    Read = 1,
-    //    Write = 2,
-    //    Execute = 4,
-    //    Full = Read | Write | Execute
-    //}
-
-    //struct Employeee
-    //{
-    //    public string Name { get; set; }
-    //    public Role EmpRole { get; set; }
-    //    public Permissions EmpPermissions { get; set; }
-
-    //    public Employeee(string name, Role role, Permissions permissions)
-    //    {
-    //        Name = name;
-    //        EmpRole = role;
-    //        EmpPermissions = permissions;
-    //    }
-
-    //    public void PrintInfo()
-    //    {
-    //        Console.WriteLine($"Name: {Name}, Role: {EmpRole}, Permissions: {EmpPermissions}");
-    //    }
-    //} 
-    #endregion
-
-
-    internal class Program
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            //==============  Part01  ========================//
+        #region Struct
+        // Struct : Value Types : STACK 
 
-            #region Q"1 1.Create a struct called "Point" to represent a 2D point with properties "X" and "Y".Write a C# program that takes two points as input from the user and calculates the distance between them.
-            //Console.Write("Enter X for Point 1: ");
-            //double x1 = double.Parse(Console.ReadLine());
-
-            //Console.Write("Enter Y for Point 1: ");
-            //double y1 = double.Parse(Console.ReadLine());
-
-            //Point p1 = new Point(x1, y1);
+        // Employee
+        //Id, Name , Salary
 
 
-            //Console.Write("Enter X for Point 2: ");
-            //double x2 = double.Parse(Console.ReadLine());
+        // Point 
 
-            //Console.Write("Enter Y for Point 2: ");
-            //double y2 = double.Parse(Console.ReadLine());
+        //Point P01;
+        // Declare For Object From Type 'Point'
+        // P01: Object
+        // Allocate UnInitialized 8 Bytes at STACK
 
-            //Point p2 = new Point(x2, y2);
+        //Console.WriteLine(P01.X);
+        //Console.WriteLine(P01.Y);
 
+        //P01.X = 12;
+        //P01.Y = 12;
+        //Console.WriteLine(P01.X);
+        //Console.WriteLine(P01.Y);
 
-            //double distance = p1.DistanceTo(p2);
-
-            //Console.WriteLine($"\nPoint 1: {p1}");
-            //Console.WriteLine($"Point 2: {p2}");
-            //Console.WriteLine($"Distance between them: {distance:F2}");
-
-
-            #endregion
-
-
-            #region Q"2 2.Create a struct called "Person" with properties "Name" and "Age". Write a C# program that takes details of 3 persons as input from the user and displays the name and age of the oldest person.
-
-            //    Person[] people = new Person[3];
+        //P01 = new Point();
+        // new : Used For Select The Constructor
 
 
-            //    for (int i = 0; i < 3; i++)
-            //    {
-            //        Console.WriteLine($"\nEnter details for person {i + 1}:");
-
-            //        Console.Write("Name: ");
-            //        string name = Console.ReadLine();
-
-            //        Console.Write("Age: ");
-            //        int age = int.Parse(Console.ReadLine());
-
-            //        people[i] = new Person(name, age);
-            //    }
+        //Console.WriteLine(P01.X);
+        //Console.WriteLine(P01.Y);
 
 
-            //    Person oldest = people[0];
 
-            //    for (int i = 1; i < people.Length; i++)
-            //    {
-            //        if (people[i].Age > oldest.Age)
-            //        {
-            //            oldest = people[i];
-            //        }
-            //    }
+        //Console.WriteLine(P@1); // C_ooP@16@7.Point
+        //P@1.PrintPoint();
 
-            //    Console.WriteLine($"\nThe oldest person is: {oldest.Name}, Age: {oldest.Age}");
-            //} 
-            #endregion
+        //Console.WriteLine(P@1.ToString()); // C_ooP@16@7.Point
+        //Console.WriteLine(P@1); // C_ooP@16@7.Point
 
+        //Point[] points = new Point[10];
 
-            //***************************** Part 02 *********************************//
+        #endregion
 
+        #region OOP Overview
+        // OOP : Object Oriented Programming
+        // Programming Paradigm 
+        // OOP : The Paradigm Use For Build Any Business
 
-            #region Q"1 1. Design and implement a Class for the employees in a company:
-            //Notes:
-            //● Employee is identified by an ID, Name, security level, salary, hire date and Gender.
-            //● We need to restrict the Gender field to be only M or F[Male or Female]
-            //● Assign the following security privileges to the employee (guest, Developer, secretary and DBA) in a form of Enum.
-            //● We want to provide the Employee Class to represent Employee data in a string Form (override ToString ()), display employee salary in a currency format. [Use String.Format() Function].
-            //try
-            //{
+        // Class : Blueprint Of The Object
+        // Object : Specific Instance From Class
 
-            //    Employee emp1 = new Employee(1, "Ahmed", SecurityLevel.Developer, 15000.5, new DateTime(2020, 5, 15), 'M');
+        // 4 pillars
+        // ---
+        // 1. Encapsulation
+        // 2. Inheritance
+        // 3. Ploymorphism
+        // 4. Abstraction    I 
+        #endregion
 
-            //    Console.WriteLine(emp1.ToString());
-            //}
-            //catch (Exception ex)
-            //{
-            //    Console.WriteLine("Error: " + ex.Message);
-            //} 
-            #endregion
+        // 1. Encapsulation :
+        // Class Or Struct
+        // Separate The Data(Attributes) Definition From Its Use
+        //[Setter Getter Method - properties]
+
+        // Employee    I
+        // Id Name salary
 
 
-            #region 0. Create an array of Employees with size three a DBA, Guest and the third one is security officer who have full permissions. (Employee[] EmpArr;)
-            //Notes:
-            //● Implement All the Necessary Member Functions on the Class(Getters, Setters)
-            //● Define all the Necessary Constructors for the Class
-            //● Allow NO RUNTIME errors if the user inputs any data
-            //● Write down all the necessary Properties(Instead of setters and getters)
+        // 1. End User Access data itself
+        // 2. No Data Validation
+        // 3. No Read Only Filed
 
-            //Employeee[] EmpArr = new Employeee[3];
+        // Apply Encapsulation : 
+        // 1. Make All Data(Attributes) Private
+        //2. Access Data Through :
+        //2.1. Setter Getter Method 
+        //2.2. Properties
+        //            Employee E01 = new Employee();
+        //            E01.id = 1;
+        //            E01.name = "Ahmed";
+        //            E01.salary = -12000;
 
-            //EmpArr[0] = new Employeee("Ali", Role.DBA, Permissions.Read | Permissions.Write);
-            //EmpArr[1] = new Employeee("Sarah", Role.Guest, Permissions.Read);
-            //EmpArr[2] = new Employeee("Omar", Role.SecurityOfficer, Permissions.Full);
+        //            Console.WriteLine(E01.id);
+        //            Console.WriteLine(E01.name);
+        //            Console.WriteLine(E01.salary);
 
-            //Console.WriteLine("Employeee Info:");
-            //foreach (var emp in EmpArr)
-            //{
-            //    emp.PrintInfo();
-            //} 
-            #endregion
 
-        }
+        //            // Apply Encapsulation User Setter Getter Method
+
+        //            // Setter
+
+        //         public void SetId(int id)
+        //        {
+        //            this.id = id;
+        //        }
+
+        //         // Getter
+
+        //        public int GetId()
+        //        {
+        //            return id;
+        //        }
+
+        //        // Setter Name
+
+
+        //public void SetName(string name)
+        //        {
+        //            if (name.Length >=)
+        //                this.name = name;
+        //        }
+
+        //        public Employee(int id, string name, double salary)
+        //        {
+        //            SetId(id);
+        //            SetName(name);
+        //            SetSalary(salary);
+        //        }
+
+
+        //public override string ToString()
+        //        {
+        //            return $"Id: {id} :: Name: {name}";
+        //        }
+
+        //    }
+        //    }
     }
 }
